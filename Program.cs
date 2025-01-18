@@ -13,6 +13,8 @@ class Program
         circle.Draw();
         square.Draw();
         
+        Console.WriteLine();
+        
         ILegacyPrinter legacyPrinter = new ILegacyPrinter.LegacyPrinter();
         legacyPrinter.Print("Hello World!");
         INewPrinter newPrinter = new INewPrinter.NewPrinter();
@@ -24,6 +26,10 @@ class Program
         IRendererInterface.ShapeFactory circleFactory = new IRendererInterface.CircleFactory();
         IRendererInterface.ShapeFactory squareFactory = new IRendererInterface.SquareFactory();
         
+        IRendererInterface.Shape factorySquare = squareFactory.Create();
         IRendererInterface.Shape factoryCircle = circleFactory.Create();
+        
+        factorySquare.Draw();
+        factoryCircle.Draw();
     }
 }
