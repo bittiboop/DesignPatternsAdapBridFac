@@ -49,21 +49,21 @@ public interface IRendererInterface
     }
     abstract class ShapeFactory
     {
-        public abstract Shape Create();
+        public abstract Shape Create(IRendererInterface renderer);
     }
     
     class CircleFactory : ShapeFactory
     {
-        public override Shape Create()
+        public override Shape Create(IRendererInterface renderer)
         {
-            return new Circle(new VectorRenderer());
+            return new Circle(renderer);
         }
     }
     class SquareFactory : ShapeFactory
     {
-        public override Shape Create()
+        public override Shape Create(IRendererInterface renderer)
         {
-            return new Square(new RasterRenderer());
+            return new Square(renderer);
         }
     }
 }

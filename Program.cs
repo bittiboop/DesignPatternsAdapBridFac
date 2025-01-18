@@ -6,9 +6,9 @@ class Program
     {
         IRendererInterface vectorRenderer = new IRendererInterface.VectorRenderer();
         IRendererInterface rasterRenderer = new IRendererInterface.RasterRenderer();
-        
-        IRendererInterface.Shape circle = new IRendererInterface.Circle(vectorRenderer);
-        IRendererInterface.Shape square = new IRendererInterface.Square(rasterRenderer);
+
+        var circle = new IRendererInterface.Circle(vectorRenderer);
+        var square = new IRendererInterface.Square(rasterRenderer);
         
         circle.Draw();
         square.Draw();
@@ -26,8 +26,8 @@ class Program
         IRendererInterface.ShapeFactory circleFactory = new IRendererInterface.CircleFactory();
         IRendererInterface.ShapeFactory squareFactory = new IRendererInterface.SquareFactory();
         
-        IRendererInterface.Shape factorySquare = squareFactory.Create();
-        IRendererInterface.Shape factoryCircle = circleFactory.Create();
+        IRendererInterface.Shape factorySquare = squareFactory.Create(vectorRenderer);
+        IRendererInterface.Shape factoryCircle = circleFactory.Create(rasterRenderer);
         
         factorySquare.Draw();
         factoryCircle.Draw();
