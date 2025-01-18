@@ -36,7 +36,7 @@ public interface IRendererInterface
         public Circle (IRendererInterface renderer) : base(renderer) { }
         public override void Draw()
         {
-            renderer.Render("circle");
+            renderer.Render("Circle");
         }
     }
     class Square : Shape
@@ -44,7 +44,7 @@ public interface IRendererInterface
         public Square(IRendererInterface renderer) : base(renderer) { }
         public override void Draw()
         {
-            renderer.Render("square");
+            renderer.Render("Square");
         }
     }
     abstract class ShapeFactory
